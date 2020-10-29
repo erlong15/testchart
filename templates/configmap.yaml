@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-configmap
+data:
+  something.xml: |-
+     {{ tpl (.Files.Get "files/something.xml") . | nindent 8 -}}
