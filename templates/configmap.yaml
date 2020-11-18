@@ -9,12 +9,9 @@ data:
   redis.properties: |-
     redis.cluster.nodes=
     {{- $redis := dict "hosts" (list) -}}
-    {{- $redis_ports := dict "ports" (list) -}}
-    {{- with .Values.redis }}
-    {{- range $key, $value := .nodes }}
+    {{- range $key, $value := .Values.redis.nodes }}
     {{- range $keyP, $valueP := $.Values.redis.ports }}
       {{- $noop := printf "%s:%d" $value (int64 $valueP)  | append $redis.hosts | set $redis "hosts" -}}
     {{- end -}}
     {{- end -}}
     {{- join "," $redis.hosts -}}
-    {{- end -}}
