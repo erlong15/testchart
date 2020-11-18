@@ -18,6 +18,15 @@ imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
 
+redis:
+  nodes:
+    - p00esiacorecache01
+    - p00esiacorecache02
+    - p00esiacorecache03
+  ports:
+    - 6380
+    - 6381
+
 serviceAccount:
   # Specifies whether a service account should be created
   create: true
