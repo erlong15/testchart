@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <test>
   <param1>{{ .Values.param1 }}</param1>
-  <param2>{{ .Values.param1 }}</param2>
+  <param2>{{ .Values.param2 }}</param2>
 </test>
